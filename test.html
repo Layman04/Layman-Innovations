@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Initiation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Added to stack elements vertically */
+    }
+
+    .card {
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      margin-bottom: 20px; /* Added margin for spacing */
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: #007bff;
+    }
+
+    ul {
+      padding: 0;
+      margin: 20px 0;
+      list-style: none;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    input[type="text"], input[type="email"], textarea, input[type="number"], button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Added styling for logo */
+    .logo {
+      margin-bottom: 20px; /* Added margin for spacing */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Added logo -->
+    <img src="/assets/img/tlogo.png" alt="tlogo" class="logo">
+    <div class="card">
+      <h2>Project Initiation</h2>
+      <p>Welcome! We're excited to get started on your project.</p>
+      <p>With our Basic Plan, priced at ₹499 for 3 months, here's what we offer:</p>
+      <ul>
+        <li><strong>Custom UI/UX Design:</strong> We will create a personalized user interface and experience tailored to your project's needs.</li>
+        <li><strong>Basic Feature Development:</strong> Implementation of essential features to kickstart your project's development process.</li>
+        <li><strong>No Dedicated Project Manager:</strong> While you won't have a dedicated project manager, our team will ensure effective communication and coordination throughout the project.</li>
+        <li><strong>No Priority Support:</strong> While we'll provide timely assistance, priority support is not included in this plan.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Project Details</h2>
+      <form id="projectForm" action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="project">Project Description:</label>
+        <textarea id="project" name="project" rows="6" required></textarea>
+        <input type="hidden" id="payment" name="payment" value="499">
+        <button type="submit">Submit Payment (₹499)</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('projectForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(form);
+      formData.forEach((value, key) => {
+        console.log(key, value);
+      });
+      // Handle form submission here
+    });
+  </script>
+</body>
+</html>
