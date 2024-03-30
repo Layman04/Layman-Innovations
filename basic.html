@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Initiation</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Additional custom styles */
+    .card {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <!-- Logo -->
+    <div class="text-center mb-4">
+      <img src="/assets/img/tlogo.png" alt="tlogo" style="max-width: 200px;">
+    </div>
+
+    <!-- Project Details Card -->
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title text-primary">Project Initiation</h2>
+        <p class="card-text">Welcome! We're excited to get started on your project.</p>
+        <p class="card-text">With our Basic Plan, priced at ₹499 for 3 months, here's what we offer:</p>
+        <ul class="list-unstyled">
+          <li><strong>Custom UI/UX Design:</strong> We will create a personalized user interface and experience tailored to your project's needs.</li>
+          <li><strong>Basic Feature Development:</strong> Implementation of essential features to kickstart your project's development process.</li>
+          <li><strong>No Dedicated Project Manager:</strong> While you won't have a dedicated project manager, our team will ensure effective communication and coordination throughout the project.</li>
+          <li><strong>No Priority Support:</strong> While we'll provide timely assistance, priority support is not included in this plan.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Project Form Card -->
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title text-primary">Project Details</h2>
+        <form id="projectForm" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="project">Project Description:</label>
+            <textarea class="form-control" id="project" name="project" rows="6" required></textarea>
+          </div>
+          <input type="hidden" id="payment" name="payment" value="499">
+          <button type="submit" class="btn btn-primary">Submit Payment (₹499)</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (optional, for certain features like dropdowns) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // JavaScript for form submission handling
+    const form = document.getElementById('projectForm');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(form);
+      formData.forEach((value, key) => {
+        console.log(key, value);
+      });
+      // Handle form submission here
+    });
+  </script>
+</body>
+</html>
