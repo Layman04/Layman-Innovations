@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Initiation</title>
-  <!-- Latest Bootstrap CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     /* Additional custom styles */
     .logo-container {
@@ -56,40 +56,76 @@
       <div class="card-body">
         <h2 class="card-title text-primary">Project Details</h2>
         <form id="projectForm" action="/Sub.html" method="post" netlify>
-          <div class="mb-3">
-            <label for="name" class="form-label">Your Name:</label>
+          <div class="form-group">
+            <label for="name">Your Name:</label>
             <input type="text" class="form-control" id="name" name="name" required>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Your Email:</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" class="form-control" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
+            <small id="emailHelp" class="form-text text-muted">Please enter a valid email address.</small>
           </div>
-          <div class="mb-3">
-            <label for="project" class="form-label">Project Description:</label>
+          <div class="form-group">
+            <label for="phone">Your Phone:</label>
+            <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10}" required>
+            <small id="phoneHelp" class="form-text text-muted">Please enter a 10-digit phone number.</small>
+          </div>
+          <div class="form-group">
+            <label for="project">Project Description:</label>
             <textarea class="form-control" id="project" name="project" rows="6" required></textarea>
           </div>
           <input type="hidden" id="payment" name="payment" value="499">
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <!-- Razorpay payment button -->
+          <button type="button" class="btn btn-primary" onclick="validateAndPay()">Pay ₹499 via Razorpay</button>
         </form>
       </div>
     </div>
   </div>
 
-  <!-- Latest Bootstrap JS (optional, for certain features like dropdowns) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap JS (optional, for certain features like dropdowns) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Razorpay Script -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script>
-    // JavaScript for form submission handling
-    const form = document.getElementById('projectForm');
+    function validateAndPay() {
+      // Perform custom validation
+      if (document.getElementById('projectForm').checkValidity()) {
+        // Form is valid, proceed to payment
+        order();
+      } else {
+        // Form is not valid, show error messages
+        document.getElementById('name').reportValidity();
+        document.getElementById('email').reportValidity();
+        document.getElementById('phone').reportValidity();
+        document.getElementById('project').reportValidity();
+      }
+    }
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(form);
-      formData.forEach((value, key) => {
-        console.log(key, value);
-      });
-      // Redirect to another page
-      window.location.href = "https://rzp.io/l/29iFj6q"; // Change the URL to your desired destination
-    });
+    function order() {
+      const options = {
+        key: 'rzp_live_x0Qlx0A7v0LOEu',
+        amount: 49900, // Amount in paise
+        currency: 'INR',
+        name: 'Your Company Name',
+        description: 'Basic Plan',
+        handler: function(response) {
+          // Handle payment success
+          alert('Payment successful. Payment ID: ' + response.razorpay_payment_id);
+          // Now submit the form
+          document.getElementById('projectForm').submit();
+        },
+        prefill: {
+          email: 'test@example.com',
+          contact: '9876543210'
+        },
+        theme: {
+          color: '#007bff'
+        }
+      };
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
   </script>
 </body>
 </html>
