@@ -90,7 +90,7 @@
   <script>
     function validateAndPay() {
       // Perform custom validation
-      if (document.getElementById('projectForm').checkValidity()) {
+      if (document.getElementById('projectFormb').checkValidity()) {
         // Form is valid, proceed to payment
         order();
       } else {
@@ -113,7 +113,7 @@
           // Handle payment success
           alert('Payment successful. Payment ID: ' + response.razorpay_payment_id);
           // Now submit the form
-          document.getElementById('projectForm').submit();
+          document.getElementById('projectFormb').submit();
         },
         prefill: {
           email: 'test@example.com',
