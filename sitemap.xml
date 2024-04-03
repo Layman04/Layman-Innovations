@@ -1,33 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://www.laymaninnovations.com/</loc>
-        <lastmod>2024-04-03</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://www.laymaninnovations.com/about</loc>
-        <lastmod>2024-04-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.laymaninnovations.com/services</loc>
-        <lastmod>2024-04-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.laymaninnovations.com/products</loc>
-        <lastmod>2024-04-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://www.laymaninnovations.com/contact</loc>
-        <lastmod>2024-04-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-</urlset>
+  <loc>https://innovations.layman.world/about</loc>
+  <lastmod>2024-04-01</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>https://innovations.layman.world/services</loc>
+  <lastmod>2024-04-01</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://innovations.layman.world/pricing</loc>
+  <lastmod>2024-04-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://innovations.layman.world/team</loc>
+  <lastmod>2024-04-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://innovations.layman.world/faqs</loc>
+  <lastmod>2024-04-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
+</url>
+<url>
+  <loc>https://innovations.layman.world/contact</loc>
+  <lastmod>2024-04-01</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.4</priority>
+</url>
